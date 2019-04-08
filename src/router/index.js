@@ -7,6 +7,11 @@ import musicEdit from '@/components/musicEdit/musicEdit'
 import indexContent from '@/components/indexContent/indexContent'
 import adminList from '@/components/adminList/adminList'
 import ordinarytUserList from '@/components/ordinarytUserList/ordinarytUserList'
+import frontIndex from '@/components/frontend/frontIndex/frontIndex'
+import discoverMusic from '@/components/frontend//discoverMusic/discoverMusic.vue'
+import myMusic from '@/components/frontend//myMusic/myMusic.vue'
+import musician from '@/components/frontend//musician/musician.vue'
+import vip from '@/components/frontend//vip/vip.vue'
 
 Vue.use(Router)
 
@@ -16,6 +21,33 @@ export default new Router({
       path: '/Login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/frontend/frontIndex',
+      name: 'frontIndex',
+      component: frontIndex,
+      children:[
+        {
+          path: 'discoverMusic',
+          name: 'discoverMusic',
+          component: discoverMusic
+        },
+        {
+          path: 'myMusic',
+          name: 'myMusic',
+          component: myMusic
+        },
+        {
+          path: 'musician',
+          name: 'musician',
+          component: musician
+        },
+        {
+          path: 'vip',
+          name: 'vip',
+          component: vip
+        }
+      ]
     },
     {
       path: '/backIndex',
